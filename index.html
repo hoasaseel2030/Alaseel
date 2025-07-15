@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>نظام ادارة المنتجات</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="crud">
+    <div class="head">
+      <h2>الاصيل</h2>
+      <p>نظام اداره المنتجات</p>
+    </div>
+    <div class="inputs">
+      <input placeholder="اسم المنتج" type="text" id="title" />
+      <div class="price">
+        <input onkeyup="getcode()" onclick="getTotal()" placeholder="سعر الجمله" type="number" id="price" />
+        <input onkeyup="getTotal()" placeholder="سعر البيع" type="number" id="ads" />
+        <input onkeyup="getTotal()" placeholder="الخصومات" type="number" id="discount" />
+        <small id="code"></small>
+        <small id="total"></small>
+      </div>
+      <input type="number" placeholder="عدد المنتج" id="count" />
+      <input type="text" placeholder="الصنف" id="category" />
+      <button id="submit">creat</button>
+    </div>
+    <div class="outputs">
+      <div class="searchBlock">
+        <input onkeyup="searchData(this.value)" type="text" id="search" placeholder="ابحث" />
+        <div class="btnSearch">
+          <button onclick="getSearchMood(this.id)" id="searhTitle">
+            البحث عن طريق الاسم
+          </button>
+          <button onclick="getSearchMood(this.id)" id="searchcategory">
+            البحث عن طريق الصنف
+          </button>
+        </div>
+      </div>
+      <div id="deleteAll"></div>
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>الاسم</th>
+          <th>السعر</th>
+          <th>الارتيكل</th>
+          <th>سعر البيع</th>
+          <th>الخصومات</th>
+          <th>المكسب</th>
+          <th>الصنف</th>
+          <th>تعديل</th>
+          <th>حذف</th>
+        </tr>
+        <tbody id="tbody">
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><button id="update">تعديل</button></td>
+            <td><button id="delete">حذف</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>
